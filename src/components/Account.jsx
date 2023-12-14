@@ -4,7 +4,11 @@ import { useNavigate } from "react-router-dom"
 
 const Account = ({user, setUser, setToken }) => {
     const navigate = useNavigate()
+
+
     
+
+
     const logout = () => {
         window.localStorage.removeItem('token');
         setToken(null)
