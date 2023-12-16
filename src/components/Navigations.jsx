@@ -5,7 +5,10 @@ const Navigations = ({user}) => {
     
     return (
         <nav>
+            <Link to='/homepage'>Home</Link>
+            <Link to='/aboutus'>About Us</Link>
             <Link to='/books'>Books</Link>
+            
             {
                 user.email ? (
                     <span>

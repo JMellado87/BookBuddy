@@ -1,8 +1,6 @@
 body {
   font-family: Georgia, serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
+
 }
 
 #logo-image {
@@ -10,12 +8,15 @@ body {
   margin-right: 10px;
 }
 
+a{
+  text-decoration: none;
+}
 /* Add your own custom styles here */
 
 nav{
   display: flex;
   justify-content: space-around;
-  background-color: lightgreen;
+  background-color: cadetblue;
 }
 
 nav span{
@@ -23,6 +24,9 @@ nav span{
   justify-content: space-around;
 }
 
+h1{
+  text-align: center;
+}
 nav a{
   padding: 1rem;
 }
@@ -30,13 +34,21 @@ nav a{
 .registerForm {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  margin: 5px;
+}
+.registerForm button {
+  width: fit-content;
+  align-self: center;
+  margin: 2px;
+  background-color: cadetblue;
 }
 
 body {
   font-family: Georgia, serif;
-  background-color: #f8f8f8;
-  margin: 0;
-  padding: 0;
+  background-color: wheat;
+
 }
 
 #logo-image {
@@ -49,7 +61,8 @@ body {
 nav{
   display: flex;
   justify-content: space-around;
-  background-color: lightgreen;
+  background-color: cadetblue;
+  border-radius: 2rem 2rem 2rem 2rem;
 }
 
 nav span{
@@ -66,87 +79,74 @@ nav a{
   flex-wrap: wrap;
 }
 
-
-.booksOverlook {
-  display: flex;
-  height: 75px;
-  border: 1px black solid;
-  border-radius: 1rem 1rem 1rem 1rem;
-  margin-left: 15px;
-  margin-right: 1%;
-  align-items: center;
+.booksmain  { 
   text-align: center;
-  justify-content: center;
-  width: 445px;
-  padding-left: 5px;
-  margin-right: 1%;
-  text-decoration: none;
-  background-color: wheat;
+
 }
 
-
-.coverimage {
-  height: 10%;
-  width: 10%;
-  margin-left: 15px;
-  padding: 1%;
-}
-
-.bookContainer {
+.bookcontainerMain{
   display: flex;
-  border-top: 1px black solid;
-  margin-left: 15px;
-  align-items: center;
-  margin-right: 1%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
+  gap: 2rem;
+  
 }
-
-.bookNavBar {
-  display: flex;
+.bookContainer  {
+  width: 200px;
+  text-align: center;
+  list-style: none;
+  display: flex; 
   flex-wrap: nowrap;
-  border-top: 2px black solid;
-  border-bottom: 1px black solid;
-  margin-left: 15px;
-  margin-right: 1%;
-  font-weight: bolder;
-}
-
-.bookNavContentImage {
-  margin-left: 3%;
-  padding-left: 5px;
-  padding-right: 5px;
-  width: 100px;
-}
-
-.bookNavContentTitle {
-
-  padding-left: 5px;
-  padding-right: 5px;
   text-align: center;
-  width: 450px;
-  display: inline-block;
+  align-content: center;  
+  flex-direction: column;
+  align-items: stretch;
+  border: 1px solid sienna;
+  border-left: 30px solid sienna;
+  background-color: cadetblue;
 }
 
-.bookNavContentAuthor {
 
-  padding-left: 5px;
-  padding-right: 5px;
-  text-align: center;
-  width: 450px;
-  display: inline-block;
+
+.bookContainer img{
+  width:80px;
+  height: auto;
+  margin-left: 10px;
+  padding: 10px;
+  align-self: center;
+  border-radius: 1rem 1rem 1rem 1rem;
 }
 
-.bookNavContentAvailability {
-  padding-left: 5px;
-  padding-right: 5px;
-  text-align: center;
-  width: 390.5px;
-  display: inline-block;
+.bookContainer p{
+  align-self: center;
+  padding: 1px;
+  object-position: bottom;
+}
+
+.inStockBox1 {
+  border: 1px solid black;
+  color: white;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  background-color: green;
+  width: fit-content;
+  
+  
+}
+.inStockBox2 {
+  border: 1px solid black;
+  color: white;
+  background-color: rgb(255, 92, 92);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  width: fit-content;
+  
 }
 
 .searchBar {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: left;
   
 }
 
@@ -167,9 +167,44 @@ nav a{
 
 }
 .singleBookIMG {
-  width: fit-content;
+  width: 300px;
   align-content: center;
-  margin-left: 30%;
+  align-self: center;
+  border-radius: 1rem 1rem 1rem 1rem;
   
 
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.homeIMG {
+  width: 500px;
+  border-radius: 20rem 20rem 20rem 20rem;
+}
+
+.loginMain {
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+  
+}
+.loginMain button {
+  background-color: cadetblue;
+}
+
+.aboutUs{
+  text-align: center;
+}
+
+.accountMain{
+  text-align: center;
+  
+}
+
+.accountMain li {
+  list-style: none;
 }

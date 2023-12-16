@@ -10,11 +10,14 @@ import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
 import SingleBook from './components/SingleBook'
+import AboutUs from './components/AboutUs'
+
 
 function App() {
   const [token, setToken] = useState(null)
   const [user, setUser] = useState({})
   const [books, setBooks] = useState([])
+  const [error, setError] = useState(null);
 
 
   useEffect(() => {
@@ -43,24 +46,31 @@ function App() {
 
   useEffect(() => {
     const fetchBooks = async() => {
+      try{
       const {data} = await axios.get('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books')
       setBooks(data.books)
+    } catch (error) {
+      setError('Error fetching books. Please try again.');
     }
+  }
+
     fetchBooks()
-  }, [])
+  }, []) 
 
   return (
     <>
-    <h1><img id='logo-image' src={bookLogo}/><Link to='/'>Library App</Link></h1>
+    <h1><Link to='/homepage'>Zoolander Library for kids who can't read good</Link></h1>
+    <p>Viewing as: { user.firstname ? user.firstname : "Guest" }</p>
     <Navigations user={user}/>
     <Routes>
-      <Route path='/' element={<Homepage/>}/>
+      <Route path='/homepage' element={<Homepage books={books} user={user} token={token}/>}/>
+      <Route path='/aboutUs' element={<AboutUs />}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
-      <Route path='/books' element={<Books books={books} />}/>
-      <Route path='/books/:id' element={<SingleBook books={books} setToken={setToken}/>}/>
-      <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
+      <Route path='/books' element={<Books books={books} error={error} user={user} token={token} />}/>
+      <Route path='/books/:id' element={<SingleBook books={books} token={token} user={user}/>}/>
+      <Route path='/login' element={<Login setUser={setUser} setToken={setToken} token={token}/>}/>
       <Route path='/register' element={<Register />}/>
-      <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>
+      <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken} books={books} token={token} />}/>
     </Routes>
 
       

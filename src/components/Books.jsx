@@ -1,35 +1,32 @@
 import { Link } from "react-router-dom"
 import SearchBar from "./SearchBar"
 
+
 const Books = ({books}) => {
 
     return(
-        <div>
+        <div className="booksmain">
 
             <h1>Books</h1>
             <h3>Catalog of Titles</h3>
-            
-            <br />
-            <div className="bookNavBar">
-                <span className="bookNavContentImage">Cover</span>
-                <span className="bookNavContentTitle">Title</span>
-                <span className="bookNavContentAuthor">In Stock?</span>
-                <span className="bookNavContentAvailability">Author</span>
-            </div>
-            { books.map((book) => {
-                const inStock = book.available ? "yes" : "no"
+            <p>Number of titles in Library {books.length} </p>
+            <SearchBar books={books} />
+            <br/>
+            <ul className="bookcontainerMain" >
+            {books.map((book) => {
+                const inStock = book.available ? "Available" : "Not Available"
                 return (
-                    <span  key={book.id} className="bookContainer">
-                        <img src={book.coverimage} className="coverimage"/>
-                        <Link className="booksOverlook" to={`/books/${book.id}`}>{book.title}</Link>
-                        <h3 className="booksOverlook">{inStock}</h3>
-                        <h3 className="booksOverlook">{book.author}</h3>
-                    </span>
+                                <li key={book.id} className="bookContainer">
+                                <Link  to={`/books/${book.id}`}>
+                                <h4>{book.title}</h4></Link>
+                                <img  src={book.coverimage} className="coverimage"/>
+                                <p className={ inStock === "Available" ?  "inStockBox1" : "inStockBox2" } > {inStock}</p>
+                                </li>
+                            
 
-                )
-            }
-            )}
-        </div>
+                )})} </ul>  
+                
+          </div>
     )
 }
 

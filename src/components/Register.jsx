@@ -31,7 +31,7 @@ const Register = () => {
     }
 
     return(
-        <div>
+        <div className="registerMain">
             <form onSubmit={handleSubmit} className="registerForm">
                 <label>
                     First name:
@@ -50,7 +50,7 @@ const Register = () => {
                 />
                 </label>
                 <label>
-                    Email:
+                    E-mail &nbsp; &nbsp;  &nbsp; :
                     <input 
                         type="email"
                         value = {email}
@@ -58,7 +58,7 @@ const Register = () => {
                     />
                 </label>
                 <label>
-                    Password:
+                    Password &nbsp;:
                     <input 
                         type="text"
                         value={password}

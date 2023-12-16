@@ -21,14 +21,14 @@ const Login = ({setToken}) => {
             const {data} = await axios.post('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/users/login', user)
             window.localStorage.setItem('token', data.token);
             setToken(data.token)
-            navigate('/')
+            navigate('/homepage')
         } catch (error) {
             setError(error.response.data.message)
         }
     }
 
     return(
-        <div>
+        <div className="loginMain">
             <form onSubmit={handleSubmit}>
                 <label>
                     Email:

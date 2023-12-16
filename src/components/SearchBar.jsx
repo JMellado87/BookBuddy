@@ -5,9 +5,7 @@ const SearchBar = ({books}) => {
     const [searchTerm, setSearchTerm] = useState('')
 
     const filteredTerms = books.filter((book) => {
-        const lowercaseTitle= book.title.toLowerCase()
-        const lowercaseSearchTerm = searchTerm.toLowerCase()
-        return lowercaseTitle.indexOf(lowercaseSearchTerm) !== -1
+        return book.title.indexOf(searchTerm) !== -1
     })
 
     return(
@@ -18,7 +16,6 @@ const SearchBar = ({books}) => {
                 <h5>Search for titles:</h5>
                 <span >   
                 <input
-                    className='searchInput' 
                     type="text"
                     value={searchTerm}
                     onChange={(event) => {setSearchTerm(event.target.value)}}
