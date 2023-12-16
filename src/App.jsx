@@ -62,8 +62,9 @@ function App() {
     <h1><Link to='/homepage'>Zoolander Library for kids who can't read good</Link></h1>
     <p>Viewing as: { user.firstname ? user.firstname : "Guest" }</p>
     <Navigations user={user}/>
+    
     <Routes>
-      <Route path='/homepage' element={<Homepage books={books} user={user} token={token}/>}/>
+      <Route path='homepage' element={<Homepage books={books} user={user} token={token}/>}/>
       <Route path='/aboutUs' element={<AboutUs />}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
       <Route path='/books' element={<Books books={books} error={error} user={user} token={token} />}/>
