@@ -208,3 +208,9 @@ nav a{
 .accountMain li {
   list-style: none;
 }
+
+.welcomeMessage {
+  text-align: center;
+  align-self: center;
+  margin-top: 50px;
+}

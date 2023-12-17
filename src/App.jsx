@@ -11,6 +11,7 @@ import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
 import SingleBook from './components/SingleBook'
 import AboutUs from './components/AboutUs'
+import Welcome from './components/Welcome'
 
 
 function App() {
@@ -64,7 +65,9 @@ function App() {
     <Navigations user={user}/>
     
     <Routes>
-      <Route path='homepage' element={<Homepage books={books} user={user} token={token}/>}/>
+
+      <Route path='/' element={<Welcome />}/>
+      <Route path='/homepage' element={<Homepage books={books} user={user} token={token}/>}/>
       <Route path='/aboutUs' element={<AboutUs />}/>
       <Route path='/successReg' element={<SuccessRegi />}/>
       <Route path='/books' element={<Books books={books} error={error} user={user} token={token} />}/>
